@@ -17,9 +17,9 @@ export function useCodebooks() {
         setError(null);
 
         const [genderItems, houseItems, yearItems] = await Promise.all([
-          codebooksApi.getItems('gender'),
-          codebooksApi.getItems('house'),
-          codebooksApi.getItems('year'),
+          codebooksApi.getItems('GENDER'),
+          codebooksApi.getItems('HOUSE'),
+          codebooksApi.getItems('YEAR'),
         ]);
 
         setCodebooks({
