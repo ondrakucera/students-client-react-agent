@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { studentsApi } from '../api';
 import { useCodebooks } from '../hooks/useCodebooks';
+import CodebookSelect from './CodebookSelect';
 
 export default function StudentForm({ isEdit = false }) {
   const navigate = useNavigate();
@@ -146,21 +147,15 @@ export default function StudentForm({ isEdit = false }) {
                 <label htmlFor="house" className="form-label">House</label>
               </th>
               <td>
-                <select
+                <CodebookSelect
                   id="house"
                   name="house"
-                  className="form-select"
                   value={formData.house}
                   onChange={handleInputChange}
+                  codebookItems={codebooks.house}
+                  showEmptyOption={!isEdit}
                   required
-                >
-                  <option value="">-- Select House --</option>
-                  {codebooks.house.map((houseItem) => (
-                    <option key={houseItem.code} value={houseItem.code}>
-                      {houseItem.names.en}
-                    </option>
-                  ))}
-                </select>
+                />
               </td>
             </tr>
             <tr>
@@ -168,21 +163,15 @@ export default function StudentForm({ isEdit = false }) {
                 <label htmlFor="year" className="form-label">Year</label>
               </th>
               <td>
-                <select
+                <CodebookSelect
                   id="year"
                   name="year"
-                  className="form-select"
                   value={formData.year}
                   onChange={handleInputChange}
+                  codebookItems={codebooks.year}
+                  showEmptyOption={!isEdit}
                   required
-                >
-                  <option value="">-- Select Year --</option>
-                  {codebooks.year.map((yearItem) => (
-                    <option key={yearItem.code} value={yearItem.code}>
-                      {yearItem.names.en}
-                    </option>
-                  ))}
-                </select>
+                />
               </td>
             </tr>
             <tr>
