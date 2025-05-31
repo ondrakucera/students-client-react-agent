@@ -17,7 +17,7 @@ export default function CodebookSelect({
       onChange={onChange}
       required={required}
     >
-      {showEmptyOption && <option value="">-- Select {name} --</option>}
+      {showEmptyOption && <option></option>}
       {codebookItems.map((item) => (
         <option key={item.code} value={item.code}>
           {item.names.en}
