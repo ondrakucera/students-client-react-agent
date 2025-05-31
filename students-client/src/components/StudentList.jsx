@@ -71,7 +71,7 @@ export default function StudentList() {
               <td>{getCodebookDisplayValue(codebooks.house, student.house)}</td>
               <td>{getCodebookDisplayValue(codebooks.year, student.year)}</td>
               <td>
-                <Link to={`/students/${student.id}/edit`}>Edit</Link>
+                <Link to={`/students/${student.id}/edit`}>Edit</Link>{' '}
                 <button
                   type="button"
                   className="btn btn-danger student-delete"
