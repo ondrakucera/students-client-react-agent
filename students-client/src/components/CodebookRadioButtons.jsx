@@ -19,7 +19,7 @@ export default function CodebookRadioButtons({
             checked={value === item.code}
             onChange={onChange}
             required={required}
-          />
+          />{' '}
           {item.names.en}
         </label>
       ))}

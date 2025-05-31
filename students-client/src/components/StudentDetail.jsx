@@ -66,7 +66,7 @@ export default function StudentDetail() {
         </tbody>
       </table>
       <nav>
-        <Link to="/">Back to student list</Link>
+        <Link to="/">Back to student list</Link>{' '}
         <Link to={`/students/${student.id}/edit`}>
           Edit {student.firstName} {student.lastName}
         </Link>
