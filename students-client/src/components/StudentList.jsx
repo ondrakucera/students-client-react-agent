@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { studentsApi, getCodebookDisplayValue } from '../api';
 import { useCodebooks } from '../hooks/useCodebooks';
+import './StudentList.css';
 
 export default function StudentList() {
   const [students, setStudents] = useState([]);
@@ -47,7 +48,7 @@ export default function StudentList() {
   }
 
   return (
-    <>
+    <div className="StudentList">
       <h1>List of students</h1>
       <table className="table table-light table-striped table-bordered">
         <thead>
@@ -87,6 +88,6 @@ export default function StudentList() {
       <nav>
         <Link to="/students/create">Create new student</Link>
       </nav>
-    </>
+    </div>
   );
 } 
