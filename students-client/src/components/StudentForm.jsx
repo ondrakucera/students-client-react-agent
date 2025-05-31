@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { studentsApi } from '../api';
 import { useCodebooks } from '../hooks/useCodebooks';
 import CodebookSelect from './CodebookSelect';
+import CodebookRadioButtons from './CodebookRadioButtons';
 
 export default function StudentForm({ isEdit = false }) {
   const navigate = useNavigate();
@@ -126,20 +127,13 @@ export default function StudentForm({ isEdit = false }) {
             <tr>
               <th>Gender</th>
               <td>
-                {codebooks.gender.map((genderItem) => (
-                  <label key={genderItem.code} className="form-check-label">
-                    <input
-                      type="radio"
-                      name="gender"
-                      className="form-check-input"
-                      value={genderItem.code}
-                      checked={formData.gender === genderItem.code}
-                      onChange={handleInputChange}
-                      required
-                    />
-                    {genderItem.names.en}
-                  </label>
-                ))}
+                <CodebookRadioButtons
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleInputChange}
+                  codebookItems={codebooks.gender}
+                  required
+                />
               </td>
             </tr>
             <tr>
