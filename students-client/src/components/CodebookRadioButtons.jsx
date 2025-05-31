@@ -1,3 +1,5 @@
+import './CodebookRadioButtons.css';
+
 export default function CodebookRadioButtons({ 
   name, 
   value, 
@@ -6,7 +8,7 @@ export default function CodebookRadioButtons({
   required = false 
 }) {
   return (
-    <>
+    <div className="CodebookRadioButtons">
       {codebookItems.map((item) => (
         <label key={item.code} className="form-check-label">
           <input
@@ -21,6 +23,6 @@ export default function CodebookRadioButtons({
           {item.names.en}
         </label>
       ))}
-    </>
+    </div>
   );
 } 

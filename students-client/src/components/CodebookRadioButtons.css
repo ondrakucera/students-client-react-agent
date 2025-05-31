@@ -1,0 +1,6 @@
+.CodebookRadioButtons .form-check-label {
+	margin-left: 1rem;
+}
+.CodebookRadioButtons .form-check-label:first-child {
+	margin-left: 0.5rem;
+} 
