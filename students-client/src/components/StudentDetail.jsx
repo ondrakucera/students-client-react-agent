@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { studentsApi, getCodebookDisplayValue } from '../api';
 import { useCodebooks } from '../hooks/useCodebooks';
+import './StudentDetail.css';
 
 export default function StudentDetail() {
   const { id } = useParams();
@@ -42,7 +43,7 @@ export default function StudentDetail() {
   }
 
   return (
-    <>
+    <div className="StudentDetail">
       <h1>Student detail</h1>
       <table className="table table-light table-bordered">
         <tbody>
@@ -70,6 +71,6 @@ export default function StudentDetail() {
           Edit {student.firstName} {student.lastName}
         </Link>
       </nav>
-    </>
+    </div>
   );
 } 

@@ -4,6 +4,7 @@ import { studentsApi } from '../api';
 import { useCodebooks } from '../hooks/useCodebooks';
 import CodebookSelect from './CodebookSelect';
 import CodebookRadioButtons from './CodebookRadioButtons';
+import './StudentForm.css';
 
 export default function StudentForm({ isEdit = false }) {
   const navigate = useNavigate();
@@ -89,7 +90,7 @@ export default function StudentForm({ isEdit = false }) {
   }
 
   return (
-    <>
+    <div className="StudentForm">
       <h1>{isEdit ? 'Edit student' : 'Create student'}</h1>
       <form onSubmit={handleSubmit}>
         <table className="table table-light table-bordered">
@@ -181,6 +182,6 @@ export default function StudentForm({ isEdit = false }) {
       <nav>
         <Link to="/">Back to student list</Link>
       </nav>
-    </>
+    </div>
   );
 } 

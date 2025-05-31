@@ -22,10 +22,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.table th,
-.table td {
-  vertical-align: middle;
-}
+
 
 nav {
   margin-top: 1.5rem;
