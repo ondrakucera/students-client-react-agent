@@ -1,3 +1,4 @@
+import React from 'react';
 import './CodebookRadioButtons.css';
 
 export default function CodebookRadioButtons({ 
@@ -9,19 +10,22 @@ export default function CodebookRadioButtons({
 }) {
   return (
     <div className="CodebookRadioButtons">
-      {codebookItems.map((item) => (
-        <label key={item.code} className="form-check-label">
-          <input
-            type="radio"
-            name={name}
-            className="form-check-input"
-            value={item.code}
-            checked={value === item.code}
-            onChange={onChange}
-            required={required}
-          />{' '}
-          {item.names.en}
-        </label>
+      {codebookItems.map((item, index) => (
+        <React.Fragment key={item.code}>
+          <label className="form-check-label">
+            <input
+              type="radio"
+              name={name}
+              className="form-check-input"
+              value={item.code}
+              checked={value === item.code}
+              onChange={onChange}
+              required={required}
+            />{' '}
+            {item.names.en}
+          </label>
+          {index < codebookItems.length - 1 && ' '}
+        </React.Fragment>
       ))}
     </div>
   );
